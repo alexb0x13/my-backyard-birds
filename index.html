@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'">
+    <title>My Backyard Birds</title>
+    <link rel="stylesheet" href="modern-styles.css">
+    <style>
+        /* Additional styles for bird pages */
+        .bird-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navigation-links {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            padding: 0 1rem;
+            width: 100%;
+        }
+
+        .nav-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            width: 30%;
+            text-align: center;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .bird-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .bird-header h1 {
+            color: #FFD700;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            color: #718096;
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+
+        .bird-image-large {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 1rem;
+            padding: 0.5rem 1rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .bird-description {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #2d3748;
+        }
+
+        .bird-description p {
+            text-indent: 2em;
+            margin-bottom: 1.5em;
+            text-align: justify;
+        }
+
+        .bird-description p:first-of-type {
+            text-indent: 0;
+            font-size: 1.2rem;
+            line-height: 1.9;
+        }
+
+        @media (max-width: 768px) {
+            .bird-content {
+                padding: 1rem;
+                margin: 0 1rem;
+            }
+
+            .bird-description {
+                font-size: 1rem;
+            }
+
+            .bird-description p:first-of-type {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1 style="font-family: 'Lora', serif">My Backyard Birds</h1>
+                <p class="subtitle">A Guide to Common Birds of the Eastern United States</p>
+                <p class="author">by Elaine Perley Pope</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="dedication">
+        <blockquote class="dedication-text">
+            <p>I dedicate this book to my parents, Alice Fairbanks Perley and John Dudley Perley,
+                who instilled in me a love, respect and appreciation of the natural world,
+                and to my dear friend and mentor,
+                Hellen Wildey Ochs, Columbus, Indiana's "Bird Lady."</p>
+        </blockquote>
+    </div>
+
+    <section class="book-intro">
+        <div class="intro-content">
+            <a href="chapters/introduction.html" class="intro-card">
+                <h2>Introduction</h2>
+                <p>I learned birding at my parents' knees. I don't recall a time when I wasn't interested in watching
+                    birds...</p>
+            </a>
+            <a href="javascript:void(0)" class="intro-card">
+                <h2>About the Author</h2>
+                <p>Learn more about Elaine Perley Pope</p>
+                <p>Coming soon...</p>
+            </a>
+        </div>
+    </section>
+
+    <main class="bird-grid">
+        <a href="chapters/common-birds.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/common-birds1.png" alt="Common Birds" class="bird-photo focus-custom-2">
+            </div>
+            <div class="bird-info">
+                <h2>Common Birds</h2>
+                <p>Drippers are an enticement, as birds love moving water.</p>
+            </div>
+        </a>
+
+        <a href="chapters/eastern-bluebird.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/eastern-bluebird.png" alt="Eastern Bluebird" class="bird-photo focus-center">
+            </div>
+            <div class="bird-info">
+                <h2>Eastern Bluebird</h2>
+                <p>How can you not love a bluebird?</p>
+            </div>
+        </a>
+
+        <a href="chapters/northern-cardinal.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/cardinal.png" alt="Northern Cardinal" class="bird-photo ">
+            </div>
+            <div class="bird-info">
+                <h2>Northern Cardinal</h2>
+                <p>Against the snow, with his crest raised in the storm, he is spectacular!</p>
+            </div>
+        </a>
+
+        <a href="chapters/american-robin.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/robin.png" alt="American Robin" class="bird-photo focus-top-left">
+            </div>
+            <div class="bird-info">
+                <h2>American Robin</h2>
+                <p>The Golden Bird Guide reports that robins sing most just before the young hatch.</p>
+            </div>
+        </a>
+
+        <a href="chapters/blue-jay.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/bluejay.png" alt="Blue Jay" class="bird-photo focus-custom-1">
+            </div>
+            <div class="bird-info">
+                <h2>Blue Jay</h2>
+                <p>A Jay will fly in and take all the peanuts from a feeder, one by one.</p>
+            </div>
+        </a>
+
+        <a href="chapters/carolina-wren.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/cwren.png" alt="Carolina Wren" class="bird-photo focus-right">
+            </div>
+            <div class="bird-info">
+                <h2>Carolina Wren</h2>
+                <p>The wrens are creative nesters, using a natural cavity or any nooks...</p>
+            </div>
+        </a>
+
+        <a href="chapters/house-wren.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/hwren.png" alt="House Wren" class="bird-photo focus-top-right">
+            </div>
+            <div class="bird-info">
+                <h2>House Wren</h2>
+                <p>Wrens are delightful creatures to hear and to observe in their daily lives.</p>
+            </div>
+        </a>
+
+        <a href="chapters/northern-mockingbird.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/nomock.png" alt="Northern Mockingbird" class="bird-photo focus-bottom">
+            </div>
+            <div class="bird-info">
+                <h2>Northern Mockingbird</h2>
+                <p>The mockingbird of course is best known for its amazing aptitude for mimicking other birds' songs.
+                </p>
+            </div>
+        </a>
+
+        <a href="chapters/mourning-dove.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/doves.png" alt="Mourning Dove" class="bird-photo focus-custom-3">
+            </div>
+            <div class="bird-info">
+                <h2>Mourning Dove</h2>
+                <p>It is rather sweet to see the male arrive at the nest, sit and "chat" for a while (little throaty
+                    coos), and then take over the nesting duty.</p>
+            </div>
+        </a>
+
+        <a href="chapters/chickadees.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/chickadee.png" alt="Black-Capped & Carolina Chickadees" class="bird-photo focus-left">
+            </div>
+            <div class="bird-info">
+                <h2>Black-Capped & Carolina Chickadees</h2>
+                <p>Chickadees live in small flocks from two to eight in the winter.</p>
+            </div>
+        </a>
+
+        <a href="chapters/tufted-titmouse.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/tit.png" alt="Tufted Titmouse" class="bird-photo focus-top">
+            </div>
+            <div class="bird-info">
+                <h2>Tufted Titmouse</h2>
+                <p>The titmice travel in flocks of three to eight birds, though I usually see only one at a time. </p>
+            </div>
+        </a>
+
+        <a href="chapters/white-breasted-nuthatch.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/nut.png" alt="White-Breasted Nuthatch" class="bird-photo focus-bottom-right">
+            </div>
+            <div class="bird-info">
+                <h2>White-Breasted Nuthatch</h2>
+                <p>In the winter white-breasted nuthatches flock with chickadees, titmice, and an occasional Carolina
+                    wren.</p>
+            </div>
+        </a>
+
+        <a href="chapters/red-breasted-nuthatch.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/rednut.png" alt="Red-Breasted Nuthatch" class="bird-photo focus-custom-4">
+            </div>
+            <div class="bird-info">
+                <h2>Red-Breasted Nuthatch</h2>
+                <p>Although they were common in Maine where my family lived during the 1960s, this was the first I'd
+                    seen in Indiana.</p>
+            </div>
+        </a>
+
+        <a href="chapters/spring-birds.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/spring.png" alt="Spring Birds" class="bird-photo focus-custom-2">
+            </div>
+            <div class="bird-info">
+                <h2>Spring Birds</h2>
+                <p>Hawks do like to perch on the three-foot stumps that were left.</p>
+            </div>
+        </a>
+
+        <a href="chapters/eastern-towhee.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/towhee.png" alt="Eastern Towhee" class="bird-photo">
+            </div>
+            <div class="bird-info">
+                <h2>Eastern Towhee</h2>
+                <p>Towhees migrate southward for the winter, and I seem always see only a male or a female when they
+                    return in the springtime – not the two together.</p>
+            </div>
+        </a>
+
+        <a href="chapters/brown-thrasher.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/thrasher.png" alt="Brown Thrasher" class="bird-photo">
+            </div>
+            <div class="bird-info">
+                <h2>Brown Thrasher</h2>
+                <p>The thrasher’s song is loud and sharp.</p>
+            </div>
+        </a>
+
+        <a href="chapters/catbird.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/catbird.png" alt="Catbird" class="bird-photo">
+            </div>
+            <div class="bird-info">
+                <h2>Catbird</h2>
+                <p>It flicks its tail frequently, which goes well with its perky, spunky attitude.</p>
+            </div>
+        </a>
+
+        <a href="chapters/woodpeckers.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/pecker.png" alt="Woodpeckers" class="bird-photo">
+            </div>
+            <div class="bird-info">
+                <h2>Woodpeckers</h2>
+                <p>What a thrill to see this beautiful bird after so many years without it.</p>
+            </div>
+        </a>
+
+        <a href="chapters/pileated-woodpecker.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/pileated.png" alt="Pileated Woodpecker" class="bird-photo focus-custom-2">
+            </div>
+            <div class="bird-info">
+                <h2>Pileated Woodpecker</h2>
+                <p>I grabbed my camera, whispering, “Don’t go! Don’t go! Don’t go!”</p>
+            </div>
+        </a>
+
+        <a href="chapters/red-bellied-woodpecker.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/redbellied.png" alt="Red-Bellied Woodpecker" class="bird-photo">
+            </div>
+            <div class="bird-info">
+                <h2>Red-Bellied Woodpecker</h2>
+                <p>When hunting for insect larvae and carpenter ants, it scoots up and down trunks and branches of
+                    trees.</p>
+            </div>
+        </a>
+
+        <a href="chapters/downy-hairy-woodpeckers.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/downy.png" alt="Downy & Hairy Woodpeckers" class="bird-photo">
+            </div>
+            <div class="bird-info">
+                <h2>Downy & Hairy Woodpeckers</h2>
+                <p>You will often see downies in the company of chickadees and nuthatches.</p>
+            </div>
+        </a>
+
+        <a href="chapters/yellow-shafted-flicker.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/flicker.png" alt="Yellow-Shafted Flicker" class="bird-photo">
+            </div>
+            <div class="bird-info">
+                <h2>Yellow-Shafted Flicker</h2>
+                <p>Growing up in Massachusetts, I heard the flicker referred to only as a “yellow-hammer.”</p>
+            </div>
+        </a>
+
+        <a href="chapters/problem-critters.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/squirrel.png" alt="Less Desirable Birds & Problem Critters"
+                    class="bird-photo focus-custom-1">
+            </div>
+            <div class="bird-info">
+                <h2>Less Desirable Birds & Problem Critters</h2>
+                <p>Click to read more about dealing with unwanted visitors</p>
+            </div>
+        </a>
+
+        <a href="chapters/native-sparrows.html" class="bird-card">
+            <div class="bird-image">
+                <img src="images/native-sparrow.png" alt="Native Sparrows" class="bird-photo">
+            </div>
+            <div class="bird-info">
+                <h2>Native Sparrows</h2>
+                <p>The song sparrow is a year-round resident in Indiana.</p>
+            </div>
+        </a>
+
+
+    </main>
+
+    <footer>
+        <p>Copyright 2024 Elaine Perley Pope</p>
+    </footer>
+
+    <script>
+        // Function to scroll to a specific bird card
+        function scrollToBirdCard() {
+            const hash = window.location.hash.slice(1);
+            if (!hash) return;
+
+            console.log('Looking for bird card:', hash);
+            const cardLink = document.querySelector(`a[href="chapters/${hash}.html"]`);
+            if (cardLink) {
+                console.log('Found bird card, scrolling...');
+                // Scroll with a gentler behavior
+                cardLink.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center',
+                    inline: 'center'
+                });
+
+                // Add highlight animation
+                cardLink.classList.add('highlight');
+                // Remove the class after animation completes
+                setTimeout(() => {
+                    cardLink.classList.remove('highlight');
+                }, 1500);
+            } else {
+                console.log('Bird card not found for hash:', hash);
+            }
+        }
+
+        // Initialize when the page loads
+        window.addEventListener('load', scrollToBirdCard);
+        // Also handle hash changes
+        window.addEventListener('hashchange', scrollToBirdCard);
+    </script>
+</body>
+
+</html>

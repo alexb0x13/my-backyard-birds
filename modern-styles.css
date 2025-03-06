@@ -1,0 +1,595 @@
+/* Modern Styles for My Backyard Birds
+   Based on reference CSS with enhanced variables and responsive design */
+
+/* Google Fonts - Adding more modern fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@400;600&display=swap');
+
+/* Root Variables - Enhanced with reference CSS approach */
+:root {
+    /* Base colors */
+    --color_0: 255, 255, 255; /* White */
+    --color_11: 255, 255, 255; /* White (duplicate for specific contexts) */
+    --color_12: 204, 204, 204; /* Light gray */
+    --color_13: 160, 160, 159; /* Medium gray */
+    --color_14: 96, 94, 94;    /* Dark gray */
+    --color_15: 47, 46, 46;    /* Nearly black */
+    
+    /* Nature-inspired colors (from your existing theme) */
+    --color_18: 227, 219, 202; /* Soft beige - accent color */
+    --color_21: 200, 215, 200; /* Soft green */
+    --color_23: 106, 135, 106; /* Medium green */
+    --color_25: 35, 45, 35;    /* Dark green */
+    --color_28: 187, 101, 69;  /* Terracotta */
+    
+    /* Functional color mappings */
+    --background-color: rgb(249, 247, 242);
+    --text-color: rgb(var(--color_15));
+    --accent-color: rgb(var(--color_18));
+    --secondary-accent: rgb(var(--color_23));
+    --highlight-color: rgb(var(--color_21));
+    
+    /* UI Component colors */
+    --card-background: rgb(var(--color_0));
+    --header-background: rgb(var(--color_25));
+    
+    /* Typography */
+    --font-family-primary: 'Montserrat', sans-serif;
+    --font-family-headings: 'Cormorant Garamond', serif;
+    --font-size-base: 16px;
+    --font-size-small: 14px;
+    --font-size-large: 18px;
+    --font-size-xlarge: 24px;
+    --font-size-xxlarge: 36px;
+    
+    /* Layout */
+    --border-radius: 12px;
+    --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --scrollbar-width: 0px;
+    --section-max-width: 1400px;
+    
+    /* Responsive units */
+    --one-unit: 1vw;
+}
+
+/* Enable container queries when supported */
+@supports (container-type: inline-size) {
+    :root {
+        --one-unit: 1cqw;
+    }
+}
+
+/* Base styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-base);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    overflow-x: auto;
+    overflow-y: scroll;
+}
+
+/* Header styles */
+header {
+    padding: 3rem 2rem;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, rgba(var(--color_25), 0.9), rgba(var(--color_23), 0.7)), url('images/cover-image.png') center; 
+    position: relative;
+    box-shadow: var(--box-shadow);
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: var(--section-max-width);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    min-height: 400px;
+}
+
+.header-text {
+    padding: 3rem;
+    background: rgba(251, 239, 239, 0.85);
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transform: translateY(20px);
+    width: 350px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    font-family: var(--font-family-headings);
+    font-size: 48px;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    color: rgb(var(--color_15));
+    line-height: 1.1;
+}
+
+.subtitle {
+    font-size: var(--font-size-base);
+    font-style: italic;
+    letter-spacing: 0.03em;
+    color: rgb(var(--color_14));
+    margin-bottom: 0.5rem;
+    max-width: 90%;
+}
+
+.author {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(var(--color_18), 0.7);
+    border-radius: 30px;
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    color: rgb(var(--color_25));
+}
+
+/* Bird Grid - Enhanced with modern CSS */
+.bird-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: var(--section-max-width);
+    margin: 0 auto;
+}
+
+.bird-card {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    text-decoration: none;
+    color: var(--text-color);
+    border: none;
+    position: relative;
+}
+
+.bird-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.bird-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, rgb(var(--color_23)), rgb(var(--color_28)));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.bird-card:hover::after {
+    transform: scaleX(1);
+}
+
+.bird-image {
+    position: relative;
+    padding-top: 75%;
+    overflow: hidden;
+    background: rgb(var(--color_12));
+}
+
+.bird-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+    object-position: center center;
+}
+
+.focus-top {
+    object-position: center top;
+}
+
+.focus-bottom {
+    object-position: center bottom;
+}
+
+.focus-left {
+    object-position: left center;
+}
+
+.focus-right {
+    object-position: right center;
+}
+
+.focus-top-left {
+    object-position: left top;
+}
+
+.focus-top-right {
+    object-position: right top;
+}
+
+.focus-bottom-left {
+    object-position: left bottom;
+}
+
+.focus-bottom-right {
+    object-position: right bottom;
+}
+
+.focus-custom-1 {
+    object-position: 25% 25%;
+}
+
+.focus-custom-2 {
+    object-position: 75% 25%;
+}
+
+.focus-custom-3 {
+    object-position: 25% 75%;
+}
+
+.focus-custom-4 {
+    object-position: 75% 75%;
+}
+
+.bird-card:hover .bird-photo {
+    transform: scale(1.1);
+}
+
+.bird-info {
+    padding: 1.5rem;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(var(--color_0), 0.95), rgba(var(--color_0), 1));
+}
+
+.bird-info h2 {
+    margin: 0;
+    font-family: var(--font-family-headings);
+    font-size: var(--font-size-large);
+    color: rgb(var(--color_15));
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+}
+
+.bird-info p {
+    margin-top: 0.75rem;
+    font-size: var(--font-size-small);
+    color: rgb(var(--color_14));
+}
+
+/* Book Introduction Section */
+.book-intro {
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, rgba(var(--color_0), 0.9), rgba(var(--color_18), 0.3));
+    margin: 3rem auto;
+    max-width: calc(var(--section-max-width) * 0.85);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.book-intro::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(var(--color_23), 0.2);
+}
+
+.book-intro::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(var(--color_28), 0.2);
+}
+
+.intro-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.intro-card {
+    padding: 2rem;
+    background: rgba(var(--color_0), 0.95);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    text-decoration: none;
+    color: var(--text-color);
+    text-align: center;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, rgb(var(--color_23)), rgb(var(--color_28)));
+}
+
+.intro-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.intro-card h2 {
+    color: rgb(var(--color_15));
+    font-family: var(--font-family-headings);
+    font-size: var(--font-size-xlarge);
+    margin-bottom: 1rem;
+}
+
+.intro-card p {
+    color: rgb(var(--color_14));
+    font-size: var(--font-size-base);
+}
+
+/* Enhanced Dedication */
+.dedication {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 4rem 3rem;
+    text-align: center;
+    position: relative;
+    background: rgba(var(--color_0), 0.9);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.dedication::before {
+    content: '"';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 120px;
+    line-height: 1;
+    font-family: serif;
+    color: rgba(var(--color_18), 0.3);
+}
+
+.dedication::after {
+    content: '"';
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 120px;
+    line-height: 1;
+    font-family: serif;
+    color: rgba(var(--color_18), 0.3);
+}
+
+.dedication-text {
+    font-style: italic;
+    font-size: var(--font-size-large);
+    color: rgb(var(--color_14));
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+    color: rgb(var(--color_0));
+    background: linear-gradient(135deg, rgb(var(--color_25)), rgb(var(--color_23)));
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, rgb(var(--color_28)), rgb(var(--color_18)));
+}
+
+footer p {
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    :root {
+        --font-size-xxlarge: 28px;
+        --font-size-xlarge: 20px;
+        --font-size-large: 16px;
+        --font-size-base: 14px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .header-text {
+        width: 280px;
+        height: 280px;
+        padding: 2rem;
+        transform: translateY(0);
+    }
+    
+    h1 {
+        font-size: 36px;
+    }
+    
+    .subtitle {
+        font-size: 12px;
+    }
+    
+    .bird-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .dedication {
+        padding: 3rem 1.5rem;
+        margin: 3rem auto;
+    }
+    
+    .dedication::before,
+    .dedication::after {
+        font-size: 80px;
+    }
+}
+
+/* Animation for highlighting elements */
+.highlight {
+    animation: gentleHighlight 1.5s ease-in-out;
+}
+
+@keyframes gentleHighlight {
+    0% {
+        background-color: transparent;
+    }
+    30% {
+        background-color: rgba(var(--color_21), 0.5);
+    }
+    70% {
+        background-color: rgba(var(--color_21), 0.5);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+/* Bird content page styles */
+.bird-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    background: rgb(var(--color_0));
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(var(--color_12), 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(var(--color_23));
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--color_28));
+}
+
+/* Image Position Fine-Tuning Tool */
+/* Use these classes to make precise adjustments to image positioning */
+/* Format: .position-X-Y where X and Y are percentages from 0-100 */
+
+.position-0-0 { object-position: 0% 0%; }
+.position-0-25 { object-position: 0% 25%; }
+.position-0-50 { object-position: 0% 50%; }
+.position-0-75 { object-position: 0% 75%; }
+.position-0-100 { object-position: 0% 100%; }
+
+.position-25-0 { object-position: 25% 0%; }
+.position-25-25 { object-position: 25% 25%; }
+.position-25-50 { object-position: 25% 50%; }
+.position-25-75 { object-position: 25% 75%; }
+.position-25-100 { object-position: 25% 100%; }
+
+.position-50-0 { object-position: 50% 0%; }
+.position-50-25 { object-position: 50% 25%; }
+.position-50-50 { object-position: 50% 50%; }
+.position-50-75 { object-position: 50% 75%; }
+.position-50-100 { object-position: 50% 100%; }
+
+.position-75-0 { object-position: 75% 0%; }
+.position-75-25 { object-position: 75% 25%; }
+.position-75-50 { object-position: 75% 50%; }
+.position-75-75 { object-position: 75% 75%; }
+.position-75-100 { object-position: 75% 100%; }
+
+.position-100-0 { object-position: 100% 0%; }
+.position-100-25 { object-position: 100% 25%; }
+.position-100-50 { object-position: 100% 50%; }
+.position-100-75 { object-position: 100% 75%; }
+.position-100-100 { object-position: 100% 100%; }
+
+/* For even more precise control */
+.position-33-33 { object-position: 33% 33%; }
+.position-33-66 { object-position: 33% 66%; }
+.position-66-33 { object-position: 66% 33%; }
+.position-66-66 { object-position: 66% 66%; }
+
+/* Add a utility to adjust image zoom level */
+.zoom-in {
+    object-fit: cover;
+    transform: scale(1.2);
+}
+
+.zoom-out {
+    object-fit: contain;
+    padding: 10px;
+}

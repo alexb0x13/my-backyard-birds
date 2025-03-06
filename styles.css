@@ -1,0 +1,388 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap');
+
+/* Enhanced Variables */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --text-color: #2c3e50;
+    --background-color: #f9f9f9;
+    --card-background: #ffffff;
+    --header-background: #2c3e50;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    font-family: 'Cormorant Garamond', serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(67, 160, 67, 0.5)), url('images/cover-image.png') center/contain no-repeat; 
+    position: relative;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.651);  /* Semi-transparent white overlay */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.header-text {
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    color: #2c3e50;  /* Darker text color for better contrast */
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    font-style: italic;
+    letter-spacing: 0.03em;
+    color: var(--secondary-color);
+}
+
+/* Enhanced Bird Grid */
+.bird-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.bird-card {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    text-decoration: none;
+    color: var(--text-color);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.bird-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bird-image {
+    position: relative;
+    padding-top: 75%;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.bird-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.bird-card:hover .bird-photo {
+    transform: scale(1.05);
+}
+
+.bird-info {
+    padding: 1.5rem;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,1));
+}
+
+.bird-info h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    color: var(--text-color);
+}
+
+/* Book Introduction Section */
+.book-intro {
+    padding: 3rem 2rem;
+    background: var(--card-background);
+    margin: 2rem auto;
+    max-width: 1200px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.intro-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.intro-card {
+    padding: 2rem;
+    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    text-decoration: none;
+    color: var(--text-color);
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.intro-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.intro-card h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.intro-card p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Enhanced Dedication */
+.dedication {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 3rem;
+    text-align: center;
+    position: relative;
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.dedication::before,
+.dedication::after {
+    font-family: "Georgia", serif;
+    font-size: 2rem;
+    color: var(--accent-color);
+    opacity: 0.6;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+}
+
+.dedication::before {
+    content: "❝";
+    top: 1rem;
+    left: 2rem;
+}
+
+.dedication::after {
+    content: "❞";
+    bottom: 1rem;
+    right: 2rem;
+}
+
+.dedication-text {
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin: 0;
+    padding: 1.5rem 3rem;
+    font-size: 1.2rem;
+}
+
+/* Bird Page Styles */
+.bird-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.bird-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.bird-header h1 {
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.bird-image-large {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.back-link {
+    display: inline-block;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.bird-description {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.bird-description p {
+    text-indent: 2em;
+    margin-bottom: 1.5em;
+    text-align: justify;
+}
+
+.bird-description p:first-of-type {
+    text-indent: 0;
+    font-size: 1.2rem;
+    line-height: 1.9;
+}
+
+.chapter-text {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+.chapter-text p:first-of-type {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-indent: 0;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.01em;
+}
+
+.chapter-text p {
+    margin-bottom: 1.5rem;
+    text-indent: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .preface {
+        text-align: justify;
+        margin: 10px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-text {
+        text-align: center;
+    }
+
+    .header-image {
+        max-width: 250px;
+        margin-top: 1rem;
+    }
+
+    .bird-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .bird-info h2 {
+        font-size: 1.2rem;
+    }
+
+    .intro-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .intro-card {
+        width: 100%;
+    }
+
+    .bird-content {
+        padding: 1rem;
+        margin: 0 1rem;
+    }
+
+    .bird-description {
+        font-size: 1rem;
+    }
+
+    .bird-description p:first-of-type {
+        font-size: 1.1rem;
+    }
+
+    .dedication {
+        margin: 2rem 1rem;
+        padding: 1rem;
+    }
+
+    .dedication-text {
+        padding: 1rem;
+    }
+}
