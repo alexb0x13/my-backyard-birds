@@ -9,106 +9,25 @@
     <title>My Backyard Birds</title>
     <link rel="stylesheet" href="modern-styles.css">
     <style>
-        /* Additional styles for bird pages */
-        .bird-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        .highlight {
+            animation: gentleHighlight 1.5s ease-in-out;
         }
 
-        .navigation-links {
-            display: flex;
-            justify-content: space-between;
-            margin: 2rem 0;
-            padding: 0 1rem;
-            width: 100%;
-        }
-
-        .nav-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: bold;
-            padding: 0.5rem 1rem;
-            width: 30%;
-            text-align: center;
-        }
-
-        .nav-link:hover {
-            text-decoration: underline;
-        }
-
-        .bird-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .bird-header h1 {
-            color: #FFD700;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-        }
-
-        .subtitle {
-            color: #718096;
-            font-style: italic;
-            font-size: 1.2rem;
-        }
-
-        .bird-image-large {
-            width: 100%;
-            max-height: 500px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin: 1rem;
-            padding: 0.5rem 1rem;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
-        .bird-description {
-            line-height: 1.8;
-            font-size: 1.1rem;
-            color: #2d3748;
-        }
-
-        .bird-description p {
-            text-indent: 2em;
-            margin-bottom: 1.5em;
-            text-align: justify;
-        }
-
-        .bird-description p:first-of-type {
-            text-indent: 0;
-            font-size: 1.2rem;
-            line-height: 1.9;
-        }
-
-        @media (max-width: 768px) {
-            .bird-content {
-                padding: 1rem;
-                margin: 0 1rem;
+        @keyframes gentleHighlight {
+            0% {
+                background-color: transparent;
             }
 
-            .bird-description {
-                font-size: 1rem;
+            30% {
+                background-color: #bfd6a4;
             }
 
-            .bird-description p:first-of-type {
-                font-size: 1.1rem;
+            70% {
+                background-color: #bfd6a4;
+            }
+
+            100% {
+                background-color: transparent;
             }
         }
     </style>
